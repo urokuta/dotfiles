@@ -47,7 +47,7 @@ nnoremap <C-c> <ESC>:bd<CR>
 nnoremap U <ESC>:redo<CR> 
 nnoremap <tab> ==
 nnoremap <C-l> <ESC>:ls<CR>
-nnoremap <C-b> <ESC>:buffer 
+"nnoremap <C-b> <ESC>:buffer 
 "nmap <C-e> $ 
 "nnoremap <C-a> ^ 
 
