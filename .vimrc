@@ -113,3 +113,14 @@ let g:snips_author = 'Jun Harada <harajune@gijutsuya.jp>'
 
 " folding 
 set foldmethod=marker
+
+
+
+set mouse=a
+set guioptions+=a
+set ttymouse=xterm2
+
+
+" ノーマルモード中でもエンターキーで改行挿入でノーマルモードに戻る
+noremap <CR> i<CR><ESC>
+set tags=tags
