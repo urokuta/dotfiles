@@ -1,158 +1,69 @@
-##these settings are for max os X
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-export EDITOR=vi
-#export CLASSPATH=/Users/haradajun/factory/tag_statement/trunk/mysql-connector-java-5.1.5-bin.jar:./
-#export DISPLAY=:0.0
+# Path to your oh-my-zsh configuration.
+ZSH=$HOME/.oh-my-zsh
 
-#. /sw/bin/init.sh
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="pygmalion"
 
-# users generic .zshrc file for zsh(1)
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 
-## Environment variable configuration
-#
-# LANG
-#
-#export LANG=ja_JP.UTF-8
+# Set to this to use case-sensitive completion
+# CASE_SENSITIVE="true"
 
-## Default shell configuration
-#
-# set prompt
-#
-autoload colors
-colors
-case ${UID} in
-0)
-  PROMPT="%B%{${fg[red]}%}%/#%{${reset_color}%}%b "
-  PROMPT2="%B%{${fg[red]}%}%_#%{${reset_color}%}%b "
-  SPROMPT="%B%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%}%b "
-  [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
-    PROMPT="%{${fg[green]}%}${HOST%%.*} ${PROMPT}"
-  ;;
-*)
-  PROMPT="%{${fg[red]}%}%/%%%{${reset_color}%} "
-  PROMPT2="%{${fg[red]}%}%_%%%{${reset_color}%} "
-  SPROMPT="%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
-  [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
-    PROMPT="%{${fg[green]}%}${HOST%%.*} ${PROMPT}"
-  ;;
-esac
+# Uncomment this to disable bi-weekly auto-update checks
+# DISABLE_AUTO_UPDATE="true"
 
-# auto change directory
-#
-setopt auto_cd
+# Uncomment to change how often before auto-updates occur? (in days)
+# export UPDATE_ZSH_DAYS=13
 
-# auto directory pushd that you can get dirs list by cd -[tab]
-#
-setopt auto_pushd
+# Uncomment following line if you want to disable colors in ls
+# DISABLE_LS_COLORS="true"
 
-# command correct edition before each completion attempt
-#
-setopt correct
+# Uncomment following line if you want to disable autosetting terminal title.
+# DISABLE_AUTO_TITLE="true"
 
-# compacked complete list display
-#
-setopt list_packed
+# Uncomment following line if you want to disable command autocorrection
+# DISABLE_CORRECTION="true"
 
-# no remove postfix slash of command line
-#
-setopt noautoremoveslash
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+# COMPLETION_WAITING_DOTS="true"
 
-# no beep sound when complete list displayed
-#
-setopt nolistbeep
+# Uncomment following line if you want to disable marking untracked files under
+# VCS as dirty. This makes repository status check for large repositories much,
+# much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-## Keybind configuration
-#
-# emacs like keybind (e.x. Ctrl-a goes to head of a line and Ctrl-e goes
-# to end of it)
-#
-bindkey -e
+# Uncomment following line if you want to  shown in the command execution time stamp 
+# in the history command output. The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|
+# yyyy-mm-dd
+# HIST_STAMPS="mm/dd/yyyy"
 
-# historical backward/forward search with linehead string binded to ^P/^N
-#
-autoload history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-bindkey "^p" history-beginning-search-backward-end
-bindkey "^n" history-beginning-search-forward-end
-bindkey "\\ep" history-beginning-search-backward-end
-bindkey "\\en" history-beginning-search-forward-end
-bindkey "^?" backward-delete-char
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(git)
 
-## Command history configuration
-#
-HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
-setopt hist_ignore_dups # ignore duplication command history list
-setopt share_history # share command history data
+source $ZSH/oh-my-zsh.sh
 
-## Completion configuration
-#
-autoload -U compinit
-compinit
+# User configuration
 
-## Alias configuration
-#
-# expand aliases before completing
-#
-setopt complete_aliases # aliased ls needs if file/dir completions work
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
+# export MANPATH="/usr/local/man:$MANPATH"
 
-alias where="command -v"
-alias j="jobs -l"
-alias emacs="open -a /Applications/Emacs.app"
+# # Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
 
-case "${OSTYPE}" in
-freebsd*|darwin*)
-  alias ls="ls -G -w"
-  ;;
-linux*)
-  alias ls="ls --color"
-  ;;
-esac
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
 
-alias la="ls -a"
-alias lf="ls -F"
-alias ll="ls -l"
+# ssh
+# export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-alias du="du -h"
-alias df="df -h"
-
-alias su="su -l"
-alias screen="TERM=screen screen -U"
-
-
-## terminal configuration
-#
-unset LSCOLORS
-case "${TERM}" in
-xterm)
-  export TERM=xterm-color
-  ;;
-kterm)
-  export TERM=kterm-color
-  # set BackSpace control character
-  stty erase
-  ;;
-cons25)
-  unset LANG
-  export LSCOLORS=ExFxCxdxBxegedabagacad
-  export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-  zstyle ':completion:*' list-colors \
-    'di=;34;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
-  ;;
-esac
-
-# set terminal title including current directory
-#
-case "${TERM}" in
-kterm*|xterm*)
-  precmd() {
-    echo -ne "\033]0;${USER}@${HOST%%.*}:${PWD}\007"
-  }
-  export LSCOLORS=exfxcxdxbxegedabagacad
-  export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-  zstyle ':completion:*' list-colors \
-    'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
-  ;;
-esac
