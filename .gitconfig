@@ -3,3 +3,5 @@
 	email = takuro.mizobe@gmail.com
 [color]
 ui = auto
+[alias]
+	l = log --decorate --all --graph

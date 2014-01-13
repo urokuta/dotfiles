@@ -1,3 +1,4 @@
 .vim/bundle/*
 !.vim/bundle/vundle/
+!.vim/bundle/neobundle.vim/
 .oh-my-zsh/
