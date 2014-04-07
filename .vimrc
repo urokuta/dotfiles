@@ -71,7 +71,7 @@ NeoBundle 'Shougo/vimproc.vim', {'build': {'unix': g:make}}
 NeoBundle 'tpope/vim-rails.git'
 NeoBundle 'Railscasts-Theme-GUIand256color'
 colorscheme railscasts
-NeoBundle 'ZenCoding.vim'
+NeoBundle 'mattn/emmet-vim'
 NeoBundle 'EnhCommentify.vim'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'hail2u/vim-css3-syntax'
@@ -105,10 +105,11 @@ NeoBundle 'tpope/vim-endwise.git'
 NeoBundle 'mru.vim'
 NeoBundle 'othree/html5.vim'
 NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'wadako111/vim-coffee-script'
 NeoBundle 'nathanaelkane/vim-indent-guides.git'
-NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'briancollins/vim-jst.git'
 NeoBundle 'itchyny/calendar.vim'
+NeoBundle 'tpope/vim-fugitive'
 let g:calendar_google_calendar = 1
 let g:calendar_locale = "ja"
 let g:calendar_first_day = "monday"
@@ -123,6 +124,7 @@ call unite#custom_source('file_rec/async', 'ignore_pattern', 'vendor/\|tmp/\|log
 nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
 " ファイル一覧
 nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file file/new<CR>
+nnoremap <silent> ,uh :<C-u>UniteWithBufferDir -buffer-name=files file file/new -input=/home/urokuta/<CR>
 nnoremap <silent> ,ut :<C-u>Unite -buffer-name=files buffer file_mru file_rec/async file/new  <CR>
 nnoremap <silent> ,um :<C-u>Unite  file_mru <CR>
 nnoremap <silent> ,ug :<C-u>Unite grep:%:-iHRn<CR>
@@ -138,12 +140,16 @@ nnoremap <silent> ,urj :<C-u>Unite file_rec/async:app/assets/javascripts/ <CR>
 nnoremap <silent> ,urfj :<C-u>Unite file file/new -input=app/assets/javascripts/ <CR>
 nnoremap <silent> ,uro :<C-u>Unite file_rec/async:config/ <CR>
 nnoremap <silent> ,urfo :<C-u>Unite file file/new -input=config/ <CR>
+nnoremap <silent> ,uru :<C-u>Unite file_rec/async:app/utils/ <CR>
+nnoremap <silent> ,urfu :<C-u>Unite file file/new -input=app/utils/ <CR>
+
 nnoremap <silent> ,url :<C-u>Unite file_rec/async:lib/ <CR>
 nnoremap <silent> ,urfl :<C-u>Unite file file/new -input=lib/ <CR>
 nnoremap <silent> ,urr :<C-u>Unite file_rec/async:spec/ <CR>
 nnoremap <silent> ,urfr :<C-u>Unite file file/new -input=spec/ <CR>
 nnoremap <silent> ,urt :<C-u>Unite file_rec/async:app/tasks/ <CR>
 nnoremap <silent> ,urft :<C-u>Unite file file/new -input=app/tasks/ <CR>
+let g:unite_source_file_mru_limit = 100
 "##############################
 
 
@@ -196,9 +202,9 @@ for n in range(1, 9)
 endfor
 " t1 で1番左のタブ、t2 で1番左から2番目のタブにジャンプ
 
-map <silent> [Tag]c :tablast <bar> tabnew<CR>
+map <silent> [Tag]c ;tablast <bar> tabnew<CR>
 " tc 新しいタブを一番右に作る
-map <silent> [Tag]x :tabclose<CR>
+map <silent> [Tag]x ;tabclose<CR>
 " tx タブを閉じる
 "map <silent> [Tag]n :tabnext<CR>
 " tn 次のタブ
@@ -207,4 +213,9 @@ map <silent> [Tag]x :tabclose<CR>
 
 filetype plugin indent on
 filetype on
+
+"### for US keyboard
+nnoremap : ;
+nnoremap ; :
+
 NeoBundleCheck
