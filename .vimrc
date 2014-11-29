@@ -110,6 +110,8 @@ NeoBundle 'nathanaelkane/vim-indent-guides.git'
 NeoBundle 'briancollins/vim-jst.git'
 NeoBundle 'itchyny/calendar.vim'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'Raimondi/delimitMate'
+
 let g:calendar_google_calendar = 1
 let g:calendar_locale = "ja"
 let g:calendar_first_day = "monday"
@@ -124,7 +126,7 @@ call unite#custom_source('file_rec/async', 'ignore_pattern', 'vendor/\|tmp/\|log
 nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
 " ファイル一覧
 nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file file/new<CR>
-nnoremap <silent> ,uh :<C-u>UniteWithBufferDir -buffer-name=files file file/new -input=/home/urokuta/<CR>
+nnoremap <silent> ,uh :<C-u>UniteWithBufferDir -buffer-name=files file:~/ file/new<CR>
 nnoremap <silent> ,ut :<C-u>Unite -buffer-name=files buffer file_mru file_rec/async file/new  <CR>
 nnoremap <silent> ,um :<C-u>Unite  file_mru <CR>
 nnoremap <silent> ,ug :<C-u>Unite grep:%:-iHRn<CR>
@@ -217,5 +219,6 @@ filetype on
 "### for US keyboard
 nnoremap : ;
 nnoremap ; :
-
+let g:surround_{char2nr("-")} = "<% \r %>"
+let g:surround_{char2nr("=")} = "<%= \r %>"
 NeoBundleCheck
