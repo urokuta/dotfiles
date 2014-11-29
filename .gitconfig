@@ -5,3 +5,5 @@
 ui = auto
 [alias]
 	l = log --decorate --all --graph
+[core]
+	editor = /usr/bin/vim
