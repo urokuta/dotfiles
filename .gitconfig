@@ -5,5 +5,12 @@
 ui = auto
 [alias]
 	l = log --decorate --all --graph
+	s = status
+	c = commit
+	a = add
+	f = fetch
+	p = push
+	r = rebase
+	m = merge
 [core]
 	editor = /usr/bin/vim

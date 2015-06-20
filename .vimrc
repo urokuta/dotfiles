@@ -1,4 +1,3 @@
-syntax on
 set nocompatible
 set autoindent
 set expandtab
@@ -111,6 +110,7 @@ NeoBundle 'briancollins/vim-jst.git'
 NeoBundle 'itchyny/calendar.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Raimondi/delimitMate'
+NeoBundle 'vim-scripts/marvim'
 
 let g:calendar_google_calendar = 1
 let g:calendar_locale = "ja"
@@ -125,8 +125,13 @@ call unite#custom_source('file_rec/async', 'ignore_pattern', 'vendor/\|tmp/\|log
 " バッファ一覧
 nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
 " ファイル一覧
-nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file file/new<CR>
-nnoremap <silent> ,uh :<C-u>UniteWithBufferDir -buffer-name=files file:~/ file/new<CR>
+if has('mac')
+  " Mac 用設定
+  nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file file/new<CR>
+  nnoremap <silent> ,uh :<C-u>Unite file:/Users/takuro_mizobe<CR>
+else
+  nnoremap <silent> ,uh :<C-u>UniteWithBufferDir -buffer-name=files file:~/ file/new<CR>
+endif
 nnoremap <silent> ,ut :<C-u>Unite -buffer-name=files buffer file_mru file_rec/async file/new  <CR>
 nnoremap <silent> ,um :<C-u>Unite  file_mru <CR>
 nnoremap <silent> ,ug :<C-u>Unite grep:%:-iHRn<CR>
@@ -140,6 +145,8 @@ nnoremap <silent> ,urs :<C-u>Unite file_rec/async:app/assets/stylesheets/ <CR>
 nnoremap <silent> ,urfs :<C-u>Unite file file/new -input=app/assets/stylesheets/ <CR>
 nnoremap <silent> ,urj :<C-u>Unite file_rec/async:app/assets/javascripts/ <CR>
 nnoremap <silent> ,urfj :<C-u>Unite file file/new -input=app/assets/javascripts/ <CR>
+nnoremap <silent> ,ur4 :<C-u>Unite file_rec/async:app/tasks/ <CR>
+nnoremap <silent> ,urf4 :<C-u>Unite file file/new -input=app/tasks/ <CR>
 nnoremap <silent> ,uro :<C-u>Unite file_rec/async:config/ <CR>
 nnoremap <silent> ,urfo :<C-u>Unite file file/new -input=config/ <CR>
 nnoremap <silent> ,uru :<C-u>Unite file_rec/async:app/utils/ <CR>
@@ -149,8 +156,6 @@ nnoremap <silent> ,url :<C-u>Unite file_rec/async:lib/ <CR>
 nnoremap <silent> ,urfl :<C-u>Unite file file/new -input=lib/ <CR>
 nnoremap <silent> ,urr :<C-u>Unite file_rec/async:spec/ <CR>
 nnoremap <silent> ,urfr :<C-u>Unite file file/new -input=spec/ <CR>
-nnoremap <silent> ,urt :<C-u>Unite file_rec/async:app/tasks/ <CR>
-nnoremap <silent> ,urft :<C-u>Unite file file/new -input=app/tasks/ <CR>
 let g:unite_source_file_mru_limit = 100
 "##############################
 
@@ -221,4 +226,8 @@ nnoremap : ;
 nnoremap ; :
 let g:surround_{char2nr("-")} = "<% \r %>"
 let g:surround_{char2nr("=")} = "<%= \r %>"
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'mxw/vim-jsx'
+NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
+syntax on
 NeoBundleCheck

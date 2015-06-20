@@ -67,3 +67,11 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+export ANDROID_SDK_HOME=~/Library/Android/sdk
+export ANDROID_AVD_HOME=$HOME/.android/avd
+
+export PATH=$PATH:$ANDROID_SDK_HOME/tools:$ANDROID_SDK_HOME/platform-tools
+launchctl setenv STUDIO_JDK /Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/
+alias run_ios='xcrun instruments -w "iPhone 5 (8.1 Simulator)"'
+alias random_password='openssl rand -base64 16'
+alias g='git'
