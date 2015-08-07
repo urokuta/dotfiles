@@ -127,11 +127,11 @@ nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
 " ファイル一覧
 if has('mac')
   " Mac 用設定
-  nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file file/new<CR>
   nnoremap <silent> ,uh :<C-u>Unite file:/Users/takuro_mizobe<CR>
 else
   nnoremap <silent> ,uh :<C-u>UniteWithBufferDir -buffer-name=files file:~/ file/new<CR>
 endif
+nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file file/new<CR>
 nnoremap <silent> ,ut :<C-u>Unite -buffer-name=files buffer file_mru file_rec/async file/new  <CR>
 nnoremap <silent> ,um :<C-u>Unite  file_mru <CR>
 nnoremap <silent> ,ug :<C-u>Unite grep:%:-iHRn<CR>
