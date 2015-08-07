@@ -1,0 +1,44 @@
+export ANDROID_SDK_HOME=~/Library/Android/sdk
+export ANDROID_AVD_HOME=$HOME/.android/avd
+
+export PATH=$PATH:$ANDROID_SDK_HOME/tools:$ANDROID_SDK_HOME/platform-tools
+launchctl setenv STUDIO_JDK /Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/
+alias run_ios='xcrun instruments -w "iPhone 5 (8.1 Simulator)"'
+alias random_password='openssl rand -base64 16'
+alias g='git'
+
+alias ll='ls -al'
+alias l='ls -al'
+alias gti='git'
+alias tmxu='tmux'
+umask 0002
+# export STORYS_ENV="takuro"
+# for rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+# for tmux
+export PATH=$HOME/.rbenv/shims:$PATH
+# for node brew
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+# heroku?
+export PATH="/usr/local/heroku/bin:$PATH"
+
+
+###########################################
+# percol http://blog.zoncoen.net/blog/2014/01/14/percol-autojump-with-zsh/
+###########################################
+function exists { which $1 &> /dev/null }
+
+if exists percol; then
+    function percol_select_history() {
+        local tac
+        exists gtac && tac="gtac" || { exists tac && tac="tac" || { tac="tail -r" } }
+        BUFFER=$(history -n 1 | eval $tac | percol --query "$LBUFFER")
+        CURSOR=$#BUFFER         # move cursor
+        zle -R -c               # refresh
+    }
+
+    zle -N percol_select_history
+    bindkey '^R' percol_select_history
+fi
+###########################################
