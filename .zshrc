@@ -13,3 +13,6 @@ fi
 # Customize to your needs...
 source "${ZDOTDIR:-$HOME}/.zshrc.custom"
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+# remove -i confirmation option
+unalias rm
