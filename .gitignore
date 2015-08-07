@@ -1,3 +1,6 @@
 .vim/bundle/*
+.vim/.netrwhist
 !.vim/bundle/vundle/
 !.vim/bundle/neobundle.vim
+.zcompdump
+.zhistory

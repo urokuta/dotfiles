@@ -6,11 +6,14 @@ ui = auto
 [alias]
 	l = log --decorate --all --graph
 	s = status
-	c = commit
+	ct = commit
 	a = add
 	f = fetch
 	p = push
 	r = rebase
 	m = merge
+	d = diff
+	b = branch
+	ck = checkout
 [core]
 	editor = /usr/bin/vim
