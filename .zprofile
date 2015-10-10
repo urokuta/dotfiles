@@ -1,0 +1,1 @@
+/Users/takuro_mizobe/dotfiles/.zprezto/runcoms/zprofile

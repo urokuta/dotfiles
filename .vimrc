@@ -224,8 +224,15 @@ filetype on
 "### for US keyboard
 nnoremap : ;
 nnoremap ; :
+
+"### rails用
 let g:surround_{char2nr("-")} = "<% \r %>"
 let g:surround_{char2nr("=")} = "<%= \r %>"
+
+"連続でペースト出来るように
+vnoremap <silent> <C-p> "0p<CR>
+
+NeoBundle 'tpope/vim-ragtag'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'mxw/vim-jsx'
 NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}

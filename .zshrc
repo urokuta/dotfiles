@@ -10,9 +10,16 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Customize to your needs...
-source "${ZDOTDIR:-$HOME}/.zshrc.custom"
-export PATH=$HOME/.nodebrew/current/bin:$PATH
-
 # remove -i confirmation option
 unalias rm
+
+# Customize to your needs...
+source "${ZDOTDIR:-$HOME}/custom.zsh"
+source "${ZDOTDIR:-$HOME}/git-issue.zsh"
+# source ~/.enhancd/zsh/enhancd.zsh
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+# for profiling ↓
+# if (which zprof > /dev/null) ;then
+#   zprof | less
+# fi
