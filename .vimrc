@@ -21,6 +21,8 @@ set mouse=a
 set cmdheight=2
 set notimeout ttimeout ttimeoutlen=200
 set listchars=tab:»-,trail:-
+" 自動再リロード
+set autoread
 "set listchars=tab:»-,trail:-,eol:↲
 set t_Co=256
 set backspace=indent,eol,start
