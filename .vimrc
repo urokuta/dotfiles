@@ -20,6 +20,8 @@ set t_vb=
 set mouse=a
 set cmdheight=2
 set notimeout ttimeout ttimeoutlen=200
+set encoding=utf-8
+set fileencodings=utf-8,euc-jp,sjis,cp932,iso-2022-jp
 set listchars=tab:»-,trail:-
 " 自動再リロード
 set autoread

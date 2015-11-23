@@ -2,7 +2,12 @@ export ANDROID_SDK_HOME=~/Library/Android/sdk
 export ANDROID_AVD_HOME=$HOME/.android/avd
 export EDITOR=vi
 
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 export PATH=$PATH:$ANDROID_SDK_HOME/tools:$ANDROID_SDK_HOME/platform-tools
+# rbenvでreadlineをつかうためのオプション
+export RUBY_CONFIGURE_OPTS="--with-readline-dir=$(brew --prefix readline)"
 launchctl setenv STUDIO_JDK /Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/
 alias run_ios='xcrun instruments -w "iPhone 5 (8.1 Simulator)"'
 alias random_password='openssl rand -base64 16'
