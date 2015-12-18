@@ -222,8 +222,6 @@ map <silent> [Tag]x ;tabclose<CR>
 "map <silent> [Tag]p :tabprevious<CR>
 " tp 前のタブ
 
-filetype plugin indent on
-filetype on
 
 "### for US keyboard
 nnoremap : ;
@@ -239,6 +237,9 @@ vnoremap <silent> <C-p> "0p<CR>
 NeoBundle 'tpope/vim-ragtag'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'mxw/vim-jsx'
-NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
+NeoBundle 'slim-template/vim-slim'
+filetype plugin indent on
+"filetype on
 syntax on
+NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
 NeoBundleCheck
