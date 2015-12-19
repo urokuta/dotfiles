@@ -115,6 +115,7 @@ NeoBundle 'itchyny/calendar.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'vim-scripts/marvim'
+NeoBundle 'zoncoen/unite-autojump'
 
 let g:calendar_google_calendar = 1
 let g:calendar_locale = "ja"
@@ -136,6 +137,7 @@ else
   nnoremap <silent> ,uh :<C-u>UniteWithBufferDir -buffer-name=files file:~/ file/new<CR>
 endif
 nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file file/new<CR>
+nnoremap <silent> ,uj :<C-u>UniteWithBufferDir autojump<CR>
 nnoremap <silent> ,ut :<C-u>Unite -buffer-name=files buffer file_mru file_rec/async file/new  <CR>
 nnoremap <silent> ,um :<C-u>Unite  file_mru <CR>
 nnoremap <silent> ,ug :<C-u>Unite grep:%:-iHRn<CR>
