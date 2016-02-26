@@ -56,8 +56,9 @@ if has('vim_starting')
   set nocompatible               " Be iMproved
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
+call neobundle#end()
 
 let g:make = 'gmake'
 if system('uname -o') =~ '^GNU/'
@@ -122,6 +123,7 @@ let g:calendar_locale = "ja"
 let g:calendar_first_day = "monday"
 " ######## UNITE ##########
 NeoBundle 'Shougo/unite.vim'
+
 let g:unite_enable_start_insert = 1
 let g:unite_enable_split_vertically = 0
 let g:unite_winwidth = 40
