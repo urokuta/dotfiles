@@ -11,6 +11,9 @@ export RUBY_CONFIGURE_OPTS="--with-readline-dir=$(brew --prefix readline)"
 launchctl setenv STUDIO_JDK /Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/
 alias run_ios='xcrun instruments -w "iPhone 5 (8.1 Simulator)"'
 alias random_password='openssl rand -base64 16'
+#command mp4 to mp3
+mp4tomp3() { ffmpeg -i $1 -ab 128k -ar 44100 "${1%\.*}.mp3" }
+
 alias g='git'
 
 alias ll='ls -al'
