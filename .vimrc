@@ -242,8 +242,11 @@ NeoBundle 'tpope/vim-ragtag'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'mxw/vim-jsx'
 NeoBundle 'slim-template/vim-slim'
+NeoBundleLazy 'othree/yajs.vim', {'autoload':{'filetypes':['javascript']}}
+autocmd BufRead,BufNewFile *.es6 setfiletype javascript
 filetype plugin indent on
-"filetype on
+filetype on
 syntax on
-NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
+" NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
+
 NeoBundleCheck
