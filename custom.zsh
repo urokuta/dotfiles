@@ -13,6 +13,7 @@ alias run_ios='xcrun instruments -w "iPhone 5 (8.1 Simulator)"'
 alias random_password='openssl rand -base64 16'
 #command mp4 to mp3
 mp4tomp3() { ffmpeg -i $1 -ab 128k -ar 44100 "${1%\.*}.mp3" }
+webmtomp3() { ffmpeg -i $1  -acodec libmp3lame -aq 4 "${1%\.*}.mp3" }
 
 alias g='git'
 
