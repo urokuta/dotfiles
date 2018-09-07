@@ -79,10 +79,10 @@ zle -N percol-git-recent-branches
 zle -N percol-git-recent-all-branches
 
 zle -N percol_select_from_git_issue_list_to_git_flow_feature_start
-bindkey '^B^S' percol_select_from_git_issue_list_to_git_flow_feature_start
+bindkey '^G^S' percol_select_from_git_issue_list_to_git_flow_feature_start
 
 zle -N percol_select_from_git_issue
-bindkey '^B^I' percol_select_from_git_issue
+bindkey '^G^I' percol_select_from_git_issue
 
 zle -N percol_select_from_git_issue_to_open
-bindkey '^B^O' percol_select_from_git_issue_to_open
+bindkey '^G^O' percol_select_from_git_issue_to_open

@@ -117,6 +117,8 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'vim-scripts/marvim'
 NeoBundle 'zoncoen/unite-autojump'
+NeoBundle 'wakatime/vim-wakatime'
+NeoBundle 'Vimjas/vim-python-pep8-indent'
 
 let g:calendar_google_calendar = 1
 let g:calendar_locale = "ja"
@@ -159,6 +161,8 @@ nnoremap <silent> ,uro :<C-u>Unite file_rec/async:config/ <CR>
 nnoremap <silent> ,urfo :<C-u>Unite file file/new -input=config/ <CR>
 nnoremap <silent> ,uru :<C-u>Unite file_rec/async:app/utils/ <CR>
 nnoremap <silent> ,urfu :<C-u>Unite file file/new -input=app/utils/ <CR>
+nnoremap <silent> ,urt :<C-u>Unite file_rec/async:spec/ <CR>
+nnoremap <silent> ,urft :<C-u>Unite file file/new -input=spec/ <CR>
 
 nnoremap <silent> ,url :<C-u>Unite file_rec/async:lib/ <CR>
 nnoremap <silent> ,urfl :<C-u>Unite file file/new -input=lib/ <CR>
@@ -244,6 +248,7 @@ NeoBundle 'mxw/vim-jsx'
 NeoBundleLazy 'othree/yajs.vim', {'autoload':{'filetypes':['javascript']}}
 autocmd BufRead,BufNewFile *.es6 setfiletype javascript
 autocmd BufNewFile,BufRead *.slim set ft=slim
+autocmd BufNewFile,BufRead *.vue set ft=slim.css.javascript.es6
 filetype plugin indent on
 filetype on
 syntax on
