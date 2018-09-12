@@ -50,7 +50,7 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH="/usr/local/heroku/bin:$PATH"
 # for hub(https://github.com/github/hub)
 # eval "$(hub alias -s)"
-alias g="hub"
+#alias g="hub"
 export PATH="$HOME/.goenv/bin:$PATH"
 eval "$(goenv init -)"
 # pyenv
