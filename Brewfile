@@ -23,7 +23,11 @@ brew "mysql"
 brew "neovim"
 brew "nkf"
 brew "peco"                     # 補完で使ってる
+
 brew "pipenv"
+brew "pyenv"
+brew "pyenv-virtualenv"
+
 brew "rbenv"
 brew "redis"
 brew "ruby-build"
